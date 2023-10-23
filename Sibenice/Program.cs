@@ -57,12 +57,6 @@ class HraSibenice
         useless.Add('!');
         useless.Add(',');
         useless.Add('?');
-        Console.SetCursorPosition(allOffsetX, allOffsetY);
-        Console.Write("Věta k uhádnutí: ");
-        for (int i = 0; i < veta.Length; i++)
-        {
-            Console.Write("_");
-        }
 
         SibeniceGuess(false);
     }
