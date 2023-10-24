@@ -15,7 +15,7 @@ class HraSibenice
     public static bool vyhra = false;
 
     // Nastavení
-    public static string veta = "Čichnova";
+    public static string veta = "střední škola Čichnova";
     public static int sibeniceOffset = 2;
     public static int allOffsetX = 0;
     public static int allOffsetY = 0;
@@ -47,10 +47,6 @@ class HraSibenice
         Console.OutputEncoding = System.Text.Encoding.Unicode;
         Console.InputEncoding = System.Text.Encoding.Unicode;
 
-        // Nastaví na střed obrazovky
-        allOffsetY = (Console.WindowHeight / 2) - 6;
-        allOffsetX = (Console.WindowWidth / 2) - ((17 + veta.Length) / 2);
-
         // Přidá mezeru, čárku, tečku, vykřičník, otazník mezi zbytečné znaky, aby nebylo potřeba zadávat tyto znaky při hádání vět.
         useless.Add(' ');
         useless.Add('.');
@@ -65,7 +61,7 @@ class HraSibenice
     // Funkce pro vykreslení šibenice a věty na uhádnutí
     static void Vykresleni(bool spatne)
     {
-        // Zkontroluje nastavení centrování a případně opraví
+        // Nastaví centrování
         allOffsetY = (Console.WindowHeight / 2) - 6;
         allOffsetX = (Console.WindowWidth / 2) - ((17 + veta.Length) / 2);
 
@@ -117,7 +113,7 @@ class HraSibenice
             Environment.Exit(0);
         }
 
-        // Oznámí j)výhru a ukončí program
+        // Oznámí výhru a ukončí program
         if (vyhra)
         {
             Console.SetCursorPosition(allOffsetX, allOffsetY + 12);
